@@ -8,7 +8,8 @@
 <body>
     <div class="contenedor-form">
         <div class="toggle">
-            <span> Crear Cuenta</span>
+            <!--<span> Crear Cuenta</span>-->
+            <p>Area de Registro Paciente</p>
         </div>
         
         <div class="formulario">

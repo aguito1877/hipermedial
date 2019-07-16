@@ -8,10 +8,11 @@
 
 
     <?php
-   // session_start();
+    session_start();
     ?>
-    <h2>Connected to MYSQL: Bienvenido Usuario:<?php print $_SESSION['user']?>;</h2>    
-
+<center>
+    <h2>Bienvenido Usuario:<?php print $_SESSION['user'];?></h2>    
+</center>
     <div class="contenedor-form">              
         
             
@@ -28,7 +29,6 @@
                 <thead>
                     <tr>
                         <th>NOMBRE PACIENTE</th>
-                        <th>APELLIDO PACIENTE</th>
                         <th>CEDULA PACIENTE</th>
                         <th>CORREO PACIENTE</th>
                     </tr>
@@ -36,29 +36,29 @@
                 <tbody>
                     <tr>
                         <td><input type="text" name="nombre_paciente"></td>
-                        <td><input type="text" name="apellido_paciente"></td>
+                       
                         <td><input type="text" name="cedula_paciente"></td>
                         <td><input type="text" name="correo_paciente"></td>
                     </tr>
                 </tbody>
             </table>
             <hr>
-            <h2>DATOS DE INGRESO</h2> 
+            <h2>SIGNOS VITALES</h2> 
             <table border="1">
                 <thead>
                     <tr>
-                        <th>PRESION ARTERIAL</th>
                         <th>TEMPERATURA</th>
-                        <th>PESO</th>
-                        <th>ALTURA</th>
+                        <th>PULSO</th>
+                        <th>RITMO RESPIRATORIO</th>
+                        
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td><input type="text" name="presion_arterial"></td>
                         <td><input type="text" name="temperatura"></td>
-                        <td><input type="text" name="peso"></td>
-                        <td><input type="text" name="altura"></td>
+                        <td><input type="text" name="pulso"></td>
+                        <td><input type="text" name="ritmo-respiratorio"></td>
+                        
                     </tr>                    
                 </tbody>
             </table>
@@ -66,8 +66,8 @@
             </center>
             <div class="textarea">
             <hr>
-            <h2>DIAGNOSTICO</h2>
-            <textarea name="diagnostico" rows="4" cols="20">
+            <h2>SINTOMAS</h2>
+            <textarea name="sintomas" rows="4" cols="20">
                 
             </textarea>
             </div>
