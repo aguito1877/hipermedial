@@ -29,11 +29,11 @@
             <?php
         } else {
             try{
-                $base=new PDO("mysql:host=localhost; dbname=veris","root","");
+                $base=new PDO("mysql:host=localhost; dbname=centro_naturopata","root","");
                 
                 $base->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
                 
-                $sql="select *from paciente where PAC_USUARIO=:usu and PAC_PASSWORD	=:con";
+                $sql="select *from responsable_registro where nombre_responsable=:usu and clave=:con";
                 
                 $resultado=$base->prepare($sql);
                 
