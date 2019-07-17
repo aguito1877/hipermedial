@@ -21,25 +21,25 @@ and open the template in the editor.
             <table border="1">
             <thead>
                 <tr>
-                    <th>CODIGO HISTORIAL</th>
-                    <th>DIAGNOSTICO</th>
+                    <th>CODIGO NATUROPATA</th>
+                    <th>NOMBRE</th>
                     <th>TRATAMIENTO</th>
-                    <th>CODIGO PACIENTE</th>
+                    
                 </tr>
             </thead>
             <tbody>
                 <?php
             
-            $conexion = mysqli_connect('localhost', 'root', '', 'msp');
-            $query = 'select * from historial';
+            $conexion = mysqli_connect('localhost', 'root', '', 'centro_naturopata');
+            $query = 'select * from naturopata';
             $obj = mysqli_query($conexion, $query);
             while ($resultado = mysqli_fetch_assoc($obj)) {
                 ?>
                 <tr>
-                    <td><?php echo $resultado['id_historial']?></td>
-                    <td><?php echo $resultado['diagnostico']?></td>
-                    <td><?php echo $resultado['tratamiento']?></td>
-                    <td><?php echo $resultado['id_paciente']?></td>
+                    <td><?php echo $resultado['id_naturopata']?></td>
+                    <td><?php echo $resultado['nombre_naturopata']?></td>
+                    <td><?php echo $resultado['tratamientoid_tratamiento']?></td>
+                  
                 </tr>
             
               <?php  
@@ -50,19 +50,19 @@ and open the template in the editor.
                <?php 
 }
 
-function insertar($id_historial,$diagnostico,$tratamiento,$id_paciente) {
+function insertar($id_naturopata,$nombre_naturopata,$tratamientoid_tratamiento) {
     
-    $conexion = mysqli_connect('localhost', 'root', '', 'msp');
-    $query = 'insert into historial(id_historial,diagnostico,tratamiento,id_paciente) values (?,?,?,?)';
+    $conexion = mysqli_connect('localhost', 'root', '', 'centro_naturopata');
+    $query = 'insert into naturopata(id_naturopata,nombre_naturopata,tratamientoid_tratamiento) values (?,?,?)';
     $obj = mysqli_prepare($conexion, $query);
-    $resultado = mysqli_stmt_bind_param($obj, 'ssss', $id_historial,$diagnostico,$tratamiento,$id_paciente);
+    $resultado = mysqli_stmt_bind_param($obj, 'sss', '$id_naturopata','$nombre_naturopata','$tratamientoid_tratamiento');
     $resultado = mysqli_execute($obj);
     
 }
 
 
-function eliminar($id_historial) {
-    $conexion = mysqli_connect('localhost', 'root', '', 'msp');
+function eliminar($id_naturopata) {
+    $conexion = mysqli_connect('localhost', 'root', '', 'centro_naturopata');
     $query = 'delete from historial where(id_historial)=?';
     $obj = mysqli_prepare($conexion, $query);
     $resultado = mysqli_stmt_bind_param($obj, 's', $id_historial);
@@ -72,7 +72,7 @@ function eliminar($id_historial) {
 
 
 function actualizar($id_historial,$diagnostico,$tratamiento,$id_paciente) {
-    $conexion = mysqli_connect('localhost', 'root', '', 'msp');
+    $conexion = mysqli_connect('localhost', 'root', '', 'centro_naturopata');
     $query = 'update historial SET diagnostico=?, tratamiento=?, id_paciente=?  where(id_historial)=?';
     $obj = mysqli_prepare($conexion, $query);
     $resultado = mysqli_stmt_bind_param($obj, 'ssss', $id_historial,$diagnostico,$tratamiento,$id_paciente);
@@ -81,7 +81,7 @@ function actualizar($id_historial,$diagnostico,$tratamiento,$id_paciente) {
 }
 
 function buscar($id_paciente) {
-    $conexion = mysqli_connect('localhost', 'root', '', 'msp');
+    $conexion = mysqli_connect('localhost', 'root', '', 'centro_naturopata');
     $query = 'select nombre_paciente from paciente where(id_paciente)=?';
          $obj = mysqli_query($conexion, $query);
          while ($resultado = mysqli_fetch_assoc($obj)) {

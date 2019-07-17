@@ -24,10 +24,10 @@ and open the template in the editor.
             </center>
             </form>
             <form action="administrador.php">
-            <input type="submit"  name="BOTON" class="btn btn-info btn-lg" value="REGRESAR">
+            <input type="submit"  name="BOTONSALIR" class="btn btn-info btn-lg" value="REGRESAR">
             </form>
         <?php
-        $conexion = mysqli_connect('localhost', 'root', '', 'msp');
+        $conexion = mysqli_connect('localhost', 'root', '', 'centro_naturopata');
         // put your code here
         include './metodos.php';
         mostar();
@@ -37,51 +37,23 @@ and open the template in the editor.
          switch ($variable) {
              case 'INSERTAR':
                  ?>
-            <form>
-                 <table border="1">
-            <thead>
-                <tr>
-                    <th>CODIGO PACIENTE</th>
-                    <th>NOMBRE PACIENTE</th>
-                    
-                </tr>
-            </thead>
-            <tbody>
-        <?php
-        // put your code here
-        $conexion = mysqli_connect('localhost', 'root', '', 'msp');
-        $query = 'select * from paciente';
-        $obj = mysqli_query($conexion, $query);
-        while ($resultado = mysqli_fetch_assoc($obj)) {
-            ?>
-                <tr>
-                    <td><?php echo $resultado['id_paciente']?></td>
-                    <td><?php echo $resultado['nombre_paciente']?></td>
-                    
-                </tr>
             
-              <?php  
-            }
-            ?>
-            </tbody>
-        </table>
-                </form>
             <form name="ingreso" method="post">
         <table border="1">
             <thead>
                 <tr>
-                    <th>CODIGO HISTORIAL</th>
-                    <th>DIAGNOSTICO</th>
-                    <th>TRATAMIENTO</th>
-                    <th>ID_PACIENTE</th>
+                    <th>CODIGO NATUROPATA</th>
+                    <th>NOMBRE</th>
+                    <th>TRATAMIENTO QUE DA</th>
+                    
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td><input type="text" name="id_historial"></td>
-                    <td><input type="text" name="diagnostico"></td>
-                    <td><input type="text" name="tratamiento"></td>
-                    <td><input type="text" name="id_paciente"></td>
+                    <td><input type="text" name="id_naturopata"></td>
+                    <td><input type="text" name="nombre_naturopata"></td>
+                    <td><input type="text" name="tratamientoid_tratamiento"></td>
+                    
                 </tr>
                 <tr>
                     <td><input type="submit" name="enviar" value="enviar"</td>
@@ -94,29 +66,29 @@ and open the template in the editor.
         
         <?php
         if(isset($_POST['enviar'])){
-        $id_historial = $_POST['id_historial'];
-        $diagnostico = $_POST['diagnostico'];
-        $tratamiento = $_POST['tratamiento'];
-        $id_paciente = $_POST['id_paciente'];
-        
+        $id_naturopata = $_POST['id_naturopata'];
+        $nombre_naturopata = $_POST['nombre_naturopata'];
+        $tratamientoid_tratamiento = $_POST['tratamientoid_tratamiento'];
+                
         include './metodos.php';
-        insertar($id_historial, $diagnostico, $tratamiento, $id_paciente);
+        insertar($id_naturopata,$nombre_naturopata,$tratamientoid_tratamiento);
         }
         break;
+        
         
         case 'ELIMINAR':
             ?>
             <form method="post">
-        Ingrese el codigo a eliminar<input type="text" name="id_historial">
+        Ingrese el codigo a eliminar<input type="text" name="id_naturopata">
         <input type="submit" name="enviar" value="enviar">
         
         </form>
         
         <?php
         if(isset($_POST['enviar'])){
-            $id_historial = $_POST['id_historial'];
+            $id_naturopata = $_POST['id_naturopata'];
             include './metodos.php';
-            eliminar($id_historial);
+            eliminar($id_naturopata);
         }
             break;
         

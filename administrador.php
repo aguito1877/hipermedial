@@ -15,26 +15,40 @@
     <div class="container">
       <div class="row">
           <div class="text-center col-md-6 col-12">
-          <h3>VISUALIZAR</h3>
-          <p>Visualizar en tablas</p>
-          <a class="btn btn-info btn-lg" href="mostrar.php" role="button">ENTRAR</a>
+              
+          <h3>Naturopata </h3>
+          
+          <a class="btn btn-info btn-lg" href="naturopataAdministracion.php" role="button">ENTRAR</a>
         </div>
           <div class="text-center col-md-6 col-12">
-          <h3>ACTUALIZAR</h3>
-          <p>Actualizar en tablas</p>
-          <a class="btn btn-info btn-lg" href="actualizar.php" role="button">ENTRAR</a>
+          <h3>Insumos</h3>
+          
+          <a class="btn btn-info btn-lg" href="insumosAdministracion.php" role="button">ENTRAR</a>
         </div>
           
         <div class="text-center col-md-6 col-12">
-          <h3>INSERTAR</h3>
-          <p>Insertar en tablas</p>
-          <a class="btn btn-info btn-lg" href="insertar.php" role="button">ENTRAR</a>
+          <h3>Especialidad</h3>
+          
+          <a class="btn btn-info btn-lg" href="especialidadAdministracion.php" role="button">ENTRAR</a>
         </div>
         
           <div class="text-center col-md-6 col-12">
-          <h3>ELIMINAR</h3>
-          <p>Eliminar en tablas</p>
-          <a class="btn btn-danger btn-lg" href="eliminar.php" role="button">ENTRAR</a>
+          <h3>Responsable</h3>
+          
+          <a class="btn btn-info btn-lg" href="responsableAdministracion.php" role="button">ENTRAR</a>
+        </div>
+          <div class="text-center col-md-6 col-12">
+              
+          <h3>Tratamiento</h3>
+          
+          <a class="btn btn-info btn-lg" href="tratamientoAdministracion.php" role="button">ENTRAR</a>
+        </div>
+          
+          <div class="text-center col-md-6 col-12">
+              
+          <h3>Regresar</h3>
+          
+          <a class="btn btn-dark btn-lg" href="index.html" role="button">SALIR</a>
         </div>
           
 
@@ -46,6 +60,9 @@
 <hr>
 <hr>
 <hr>
+<div class="formulario">
+    
+</div>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="js/jquery-3.2.1.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
