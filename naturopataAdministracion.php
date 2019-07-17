@@ -17,7 +17,7 @@ and open the template in the editor.
         <div class="contenedor-form">
             <form name="seleccion" action="naturopataAdministracion.php" method="post">
             <center>
-            <h2>TABLA</h2>
+            <h2>NATUROPATAS</h2>
             </center>
             <center>
             <input type="submit" name="btninsertar" class="btn btn-info btn-lg" value="INSERTAR">

@@ -118,7 +118,7 @@ and open the template in the editor.
             ?>
             <br>
               <br>   <br>
-              <form   action="actualizarInsumo.php" method="POST">
+              <form   action="actualizarInsumos.php" method="POST">
         <table border="1">
             <thead>
                 <tr>

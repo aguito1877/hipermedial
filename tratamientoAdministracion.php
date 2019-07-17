@@ -17,7 +17,7 @@ and open the template in the editor.
         <div class="contenedor-form">
             <form name="seleccion" action="tratamientoAdministracion.php" method="post">
             <center>
-            <h2>TABLA</h2>
+            <h2>TRATAMIENTOS</h2>
             </center>
             <center>
             <input type="submit" name="btninsertar" class="btn btn-info btn-lg" value="INSERTAR">
@@ -118,7 +118,7 @@ and open the template in the editor.
             ?>
             <br>
               <br>   <br>
-              <form   action="actualizarTratamiento" method="POST">
+              <form   action="actualizarTratamiento.php" method="POST">
         <table border="1">
             <thead>
                 <tr>

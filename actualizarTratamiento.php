@@ -7,7 +7,7 @@ and open the template in the editor.
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Actualizar Naturopata</title>
+        <title>Actualizar Tratamiento</title>
          <link rel="stylesheet" href="css/select.css">
     </head>
     <body>
@@ -15,14 +15,15 @@ and open the template in the editor.
         <?php
         include './conexion.php';
         $conexion= conectar();
-        $id_naturopata=$_POST['id_naturopata'];
+        $id_tratamiento=$_POST['id_tratamiento'];
         
         $vec;
         $vec[0]="";
         $vec[1]="";
         $vec[2]="";
+        $vec[3]="";
          $cont = 0;
-        $select = "SELECT * FROM naturopata where id_naturopata='$id_naturopata' ";
+        $select = "SELECT * FROM tratamiento where id_tratamiento='$id_tratamiento' ";
         
         $datos = $conexion->query($select);
             foreach ($datos as $value) {
@@ -33,19 +34,22 @@ and open the template in the editor.
             }
         ?>
             
-            <form action="actualizarNaturopata.php" method="POST">
-            <input type="text" name="id_naturopata" value="<?php echo $vec[0]; ?>">
-            <input type="text" name="nombre_naturopata" value="<?php echo $vec[1]; ?>">
-            <input type="text" name="tratamientoid_tratamiento" value="<?php echo $vec[2]; ?>">
+            <form action="actualizarTratamiento.php" method="POST">
+            <input type="text" name="id_tratamiento" value="<?php echo $vec[0]; ?>">
+            <input type="text" name="nombre_tratamiento" value="<?php echo $vec[1]; ?>">
+            <input type="text" name="costo_tratamiento" value="<?php echo $vec[2]; ?>">
+            <input type="text" name="especialidadid_especialidad" value="<?php echo $vec[3]; ?>">
             <input type="submit" value="Actualizar"  name="actualizar">
         </form>
                 
         <?php
         if (isset($_POST['actualizar'])) {
-            $ida = $_POST['id_naturopata'];
-            $nombre = $_POST['nombre_naturopata'];
-            $tra = $_POST['tratamientoid_tratamiento'];
-            $actu = "UPDATE naturopata SET nombre_naturopata='$nombre' , tratamientoid_tratamiento='$tra' WHERE id_naturopata='$ida'";
+            $id_tratamiento = $_POST['id_tratamiento'];
+            $nombre_tratamiento = $_POST['nombre_tratamiento'];
+            $costo_tratamiento = $_POST['costo_tratamiento'];
+            $especialidadid_especialidad = $_POST['especialidadid_especialidad'];
+            
+            $actu = "UPDATE tratamiento SET nombre_tratamiento='$nombre_tratamiento' , costo_tratamiento=$costo_tratamiento ,especialidadid_especialidad='$especialidadid_especialidad'WHERE id_tratamiento='$id_tratamiento'";
             if($conexion->query($actu)){
                 echo "Actualizado";
             }else{
@@ -54,7 +58,7 @@ and open the template in the editor.
            
         }
         ?>
-            <form action="naturopataAdministracion.php">
+            <form action="tratamientoAdministracion.php">
             <input type="submit"  name="BOTONSALIR" class="btn btn-info btn-lg" value="REGRESAR">
             </form>
             </div>
